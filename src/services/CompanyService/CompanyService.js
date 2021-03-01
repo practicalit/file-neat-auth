@@ -1,0 +1,24 @@
+
+import axios from 'axios';
+import StorageService from 'services/StorageService';
+
+const CompanyService = {
+
+  login: function(email, password) {
+      //do the magic here.
+      console.log("yes has logged in");
+      return "someting";
+  },
+  checkLogged: function() {
+
+  },
+  authenticated: function() {
+    let company = JSON.parse(StorageService.get('company'));
+    if (company) {
+      return true;
+    }
+    return false;
+  }
+};
+
+export default CompanyService;
