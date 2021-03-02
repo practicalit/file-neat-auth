@@ -180,7 +180,7 @@ export const faq = [
     title: 'Do I get notifications?',
     subtitle: '',
     text:
-      `Yes. You get email/SMS notification per your configuration when the customer shares files with you. You will also be 
+      `Of course. You get email/SMS notification per your configuration when the customer shares files with you. You will also be 
       provided with the secure link to dowload the bundled file. You can opt in/out of notifications as needed.`,
     link: 'Check it out',
   },
