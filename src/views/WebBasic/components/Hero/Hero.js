@@ -37,7 +37,7 @@ const Hero = props => {
                 <span>Fast. Secure. Dependable.</span>
               </span>
             }
-            subtitle="The right way to handle customer's sensitive files. Let customers be comfortable sharing file with you."
+            subtitle="The perfect way to handle customer's sensitive files. Let customers be comfortable sharing file with you."
             ctaGroup={[
               // <Button variant="contained" color="primary" size="large">
               //   Learn More
