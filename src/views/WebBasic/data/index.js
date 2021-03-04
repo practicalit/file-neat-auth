@@ -1,23 +1,23 @@
 export const services = [
-  {
-    icon: 'fas fa-layer-group',
-    title: 'Built for You',
-    subtitle:
-      'If you are Accountant, Lawyer, Physician, Consultant or in anyway you are dealing with customer file, then this is for you.',
-  },
-  {
-    icon: 'fas fa-lock',
-    title: 'Secure from the start',
-    subtitle:
-      'File Neat is secure by default. Higher attention is given to the file to make it secure and arrive to the intended destionation.',
-  },
-  {
-    icon: 'fas fa-hands-helping',
-    title: 'We are with you on every step.',
-    subtitle:
-      "We make sure to simplify your file sharing and accpepting process. We help on transition and importantly, you don't have to change anything.",
-  },
-];
+         {
+           icon: 'fas fa-layer-group',
+           title: 'Built for You',
+           subtitle:
+             'If you are Accountant, Lawyer, Physician, Consultant, Educator or in anyway you are dealing with customer file, then this is for you.',
+         },
+         {
+           icon: 'fas fa-lock',
+           title: 'Secure from the start',
+           subtitle:
+             'File Neat is secure by default. Higher attention is given to the file to make it secure and arrive to the intended destionation.',
+         },
+         {
+           icon: 'fas fa-hands-helping',
+           title: 'We are with you on every step.',
+           subtitle:
+             "We make sure to simplify your file sharing and accpepting process. We help on transition and importantly, you don't have to change anything.",
+         },
+       ];
 
 export const partners = [
   {
