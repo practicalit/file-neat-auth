@@ -138,7 +138,7 @@ const Contact = props => {
               title={
                 <>
                   <span>
-                    The most useful tool
+                  The right tool
                     <br />
                     <Typography color="secondary" variant="inherit" component="span">ever created</Typography>
                     <br />
