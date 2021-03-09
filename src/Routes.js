@@ -31,7 +31,7 @@ import {
   IdentifyCustomer as IdentifycustomerView,
   IdentifyCompany as IdentifyCompanyView,
   Acknowledge as AcknowledgeView,
-  AddFiles as AddFilesView
+  FileStatus as FileStatusView,
 } from './views';
 
 const Routes = () => {
@@ -139,6 +139,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/identify-customer"
+      />
+      <RouteWithLayout
+        component={FileStatusView}
+        exact
+        layout={MainLayout}
+        path="/file-info"
       />
       <RouteWithLayout
         component={AcknowledgeView}

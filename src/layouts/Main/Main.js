@@ -52,7 +52,11 @@ const Main = props => {
             {
               title: 'Identify Customer',
               href: '/identify-customer',
-            }, 
+            },
+            {
+              title: 'File Status',
+              href: '/file-info',
+            },
           ],
         },
         blog: {
