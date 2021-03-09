@@ -14,6 +14,7 @@ export { default as WebBasic } from './WebBasic';
 export { default as Upload } from './Upload';
 export { default as IdentifyCompany } from './IdentifyCompany';
 export { default as VerifyCustomer } from './VerifyCustomer';
+export { default as Referral } from './Referral';
 export { default as IdentifyCustomer } from './IdentifyCustomer';
 export { default as Acknowledge } from './Acknowledge';
 export { default as AddFiles } from './Account/components/AddFiles';
