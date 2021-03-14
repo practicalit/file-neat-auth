@@ -325,7 +325,7 @@ const Topbar = props => {
               href="/signup"
               className={classes.listItemButton}
             >
-              Sign Up
+              Sign Up/In
             </Button>
           </ListItem>
         </List>
