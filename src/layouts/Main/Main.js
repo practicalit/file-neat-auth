@@ -52,6 +52,10 @@ const Main = props => {
             {
               title: 'Identify Customer',
               href: '/identify-customer',
+            },
+            {
+              title: 'Referral',
+              href: '/Referral',
             }, 
           ],
         },
