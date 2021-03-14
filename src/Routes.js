@@ -30,10 +30,8 @@ import {
   VerifyCustomer as VerifyCustomerView,
   IdentifyCustomer as IdentifycustomerView,
   IdentifyCompany as IdentifyCompanyView,
-  Referral as ReferralView,
   Acknowledge as AcknowledgeView,
   AddFiles as AddFilesView
- 
 } from './views';
 
 const Routes = () => {
@@ -141,12 +139,6 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/identify-customer"
-      />
-       <RouteWithLayout
-        component={ReferralView}
-        exact
-        layout={MainLayout}
-        path="/Referral"
       />
       <RouteWithLayout
         component={AcknowledgeView}
