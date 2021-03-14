@@ -18,3 +18,4 @@ export { default as Referral } from './Referral';
 export { default as IdentifyCustomer } from './IdentifyCustomer';
 export { default as Acknowledge } from './Acknowledge';
 export { default as AddFiles } from './Account/components/AddFiles';
+export { default as FileStatus} from './FileStatus';

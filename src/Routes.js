@@ -32,8 +32,8 @@ import {
   IdentifyCompany as IdentifyCompanyView,
   Referral as ReferralView,
   Acknowledge as AcknowledgeView,
-  AddFiles as AddFilesView
- 
+  AddFiles as AddFilesView,
+  FileStatus as FileStatusView,
 } from './views';
 
 const Routes = () => {
@@ -147,6 +147,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/Referral"
+      />
+      <RouteWithLayout
+        component={FileStatusView}
+        exact
+        layout={MainLayout}
+        path="/file-info"
       />
       <RouteWithLayout
         component={AcknowledgeView}

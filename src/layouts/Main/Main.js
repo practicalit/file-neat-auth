@@ -55,8 +55,12 @@ const Main = props => {
             },
             {
               title: 'Referral',
-              href: '/Referral',
+              href: '/referral',
             }, 
+            {
+              title: 'File Status',
+              href: '/file-info',
+            },
           ],
         },
         blog: {
