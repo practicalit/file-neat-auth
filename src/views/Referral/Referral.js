@@ -19,10 +19,11 @@ const useStyles = makeStyles(theme => ({
 const Referral = (props) => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{backgroundColor:'sandybrown'}}>
     <Section className={classes.section}>
       <div className={classes.formContainer}>
-           <center><h1>The Referral Page</h1></center>
+       <h1 style={{color:'green', textAlign:'center'}}>The Referral Page</h1>
+       <br/>
       <Grid item xs={12} data-aos="fade-up">
             <Typography
               variant="subtitle1"
@@ -32,7 +33,7 @@ const Referral = (props) => {
               Full Name
             </Typography>
             <TextField
-              placeholder=""
+              placeholder="name"
               variant="outlined"
               size="medium"
               name="email"
@@ -48,7 +49,7 @@ const Referral = (props) => {
               E-mail
             </Typography>
             <TextField
-              placeholder=""
+              placeholder="your e-mail address"
               variant="outlined"
               size="medium"
               name="email"
@@ -65,14 +66,16 @@ const Referral = (props) => {
             Referral E-mail
             </Typography>
             <TextField
-              placeholder=""
+              placeholder="Referral e-mail"
               variant="outlined"
               size="medium"
               name="e-mail"
               type="text"
               
             />
-          </Grid>      
+          </Grid>
+          <br/>
+          <br/>      
           <Button
               variant="contained"
               type="submit"
