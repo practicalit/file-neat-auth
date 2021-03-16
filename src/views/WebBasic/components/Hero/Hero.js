@@ -31,19 +31,26 @@ const Hero = props => {
           <SectionHeader
             title={
               <span>
-                Send Document with {' '}
-                <Typography component="span" variant="inherit" color="primary">File Neat.</Typography>
+                Send Document with{' '}
+                <Typography component="span" variant="inherit" color="primary">
+                  File Neat.
+                </Typography>
                 <br />
                 <span>Fast. Secure. Dependable.</span>
               </span>
             }
             subtitle="The perfect way to handle customer's sensitive files. Let customers be comfortable sharing file with you."
             ctaGroup={[
-              // <Button variant="contained" color="primary" size="large">
-              //   Learn More
-              // </Button>,
               <Button variant="outlined" color="primary" size="large">
                 Learn More..
+              </Button>,
+              <Button
+                variant="outlined"
+                color="primary"
+                size="large"
+                href="/ask-more"
+              >
+                Ask More..
               </Button>,
             ]}
             align={isMd ? 'left' : 'center'}

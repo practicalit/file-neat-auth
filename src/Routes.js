@@ -34,6 +34,7 @@ import {
   Acknowledge as AcknowledgeView,
   AddFiles as AddFilesView,
   FileStatus as FileStatusView,
+  AskMore as AskMoreView,
 } from './views';
 
 const Routes = () => {
@@ -45,8 +46,8 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/"
-      />    
-       <RouteWithLayout
+      />
+      <RouteWithLayout
         component={PricingView}
         exact
         layout={MainLayout}
@@ -124,12 +125,12 @@ const Routes = () => {
         layout={MainLayout}
         path="/identify-company"
       />
-       <RouteWithLayout
+      <RouteWithLayout
         component={UploadView}
         exact
         layout={MainLayout}
         path="/Upload"
-        />
+      />
       <RouteWithLayout
         component={VerifyCustomerView}
         exact
@@ -142,7 +143,7 @@ const Routes = () => {
         layout={MainLayout}
         path="/identify-customer"
       />
-       <RouteWithLayout
+      <RouteWithLayout
         component={ReferralView}
         exact
         layout={MainLayout}
@@ -160,7 +161,13 @@ const Routes = () => {
         layout={MainLayout}
         path="/ack"
       />
-      
+      <RouteWithLayout
+        component={AskMoreView}
+        exact
+        layout={MainLayout}
+        path="/ask-more"
+      />
+
       <Redirect to="/not-found-cover" status="404" />
     </Switch>
   );
