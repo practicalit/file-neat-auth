@@ -3,7 +3,7 @@ export const services = [
            icon: 'fas fa-layer-group',
            title: 'Built for You',
            subtitle:
-             'If you are Accountant, Lawyer, Physician, Consultant, Educator or in anyway you are dealing with customer file, then this is for you.',
+             'If you are Accountant, Lawyer, Physician, Consultant, Educator  or in anyway you are dealing with customer file, then this is for you.',
          },
          {
            icon: 'fas fa-lock',
