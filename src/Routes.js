@@ -147,7 +147,7 @@ const Routes = () => {
         component={ReferralView}
         exact
         layout={MainLayout}
-        path="/Referral"
+        path="/referral"
       />
       <RouteWithLayout
         component={FileStatusView}
