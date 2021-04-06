@@ -110,6 +110,10 @@ const Main = props => {
               title: 'Security',
               href: '/account/?pid=security',
             },
+             {
+              title: 'Change your Password',
+              href: '/account/?pid=ChangePassword',
+            },
             {
               title: 'Notifications',
               href: '/account/?pid=notifications',
@@ -159,8 +163,8 @@ const Main = props => {
             {
               title: 'Password Reset',
               href: '/password-reset',
-            }
-
+            },
+             
           ],
         },
         password: {

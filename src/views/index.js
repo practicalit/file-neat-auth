@@ -4,6 +4,7 @@ export { default as BlogArticle } from './BlogArticle';
 export { default as ContactPage } from './ContactPage';   
 export { default as CompanyTerms } from './CompanyTerms';
 export { default as PasswordResetSimple } from './PasswordResetSimple';
+export { default as ChangePassword } from './Account/components/ChangePassword';
 export { default as Pricing } from './Pricing';
 export { default as SigninSimple } from './SigninSimple';
 export { default as SignupSimple } from './SignupSimple';

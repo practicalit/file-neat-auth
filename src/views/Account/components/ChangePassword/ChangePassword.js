@@ -1,9 +1,14 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Button, TextField } from '@material-ui/core';
 import validate from 'validate.js';
 import { LearnMoreLink } from 'components/atoms';
+import axios from 'axios';
+import CompanyService from 'services/CompanyService';
+import StorageService from 'services/StorageService';
+import { users } from 'views/WebBasic/data';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,29 +17,46 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const schema = {
-  email: {
+ password: {
     presence: { allowEmpty: false, message: 'is required' },
-    email: true,
+    
     length: {
-      maximum: 300,
+      minimum: 8,
+    },
+  },
+  newPassword: {
+    presence: { allowEmpty: false, message: 'is required' },
+    length: {
+      minimum: 8,
     },
   },
 };
 
-const Form = () => {
-  const router = useRouter();
+const  ChangePassword = () => {
+  const history = useHistory();
   const classes = useStyles();
+  
 
+ const [putPassword, setPutPassword] = React.useState({
+   password: '',
+   newPassword: ''
+ })
+  
   const [formState, setFormState] = React.useState({
     isValid: false,
     values: {},
     touched: {},
     errors: {},
+    logged: false
   });
+
+ 
 
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
-
+    
+       
+    
     setFormState(formState => ({
       ...formState,
       isValid: errors ? false : true,
@@ -45,6 +67,10 @@ const Form = () => {
   const handleChange = event => {
     event.persist();
 
+     setPutPassword(putPassword =>({
+     ...putPassword,
+    
+   }))
     setFormState(formState => ({
       ...formState,
       values: {
@@ -64,12 +90,29 @@ const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
+    const headers = {
+                 'Content-Type': 'application/json',
+                 'Authentication': 'JWT fefege...'
+               }
+
+    const data = {
+        password: formState.values.password,
+        newPassword: formState.values.newPassword
+    }
+
     if (formState.isValid) {
-      if (router && typeof router.push === 'function') {
-        router.push('/');
-      } else {
-        window.location.replace('/');
-      }
+      axios.post(`${process.env.REACT_APP_CHANGE_PASSWORD}`, {
+            headers: headers,
+            data: data
+      })
+      .then( response => {
+        if (response && response.data && response.data.success) {
+        
+         history.push("/account/?pid=general");
+        } 
+      }, error => {
+        console.error(error);
+      })
     }
 
     setFormState(formState => ({
@@ -90,26 +133,37 @@ const Form = () => {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <TextField
-              placeholder="E-mail"
-              label="E-mail *"
+              placeholder="password"
+              label="oldPassword *"
               variant="outlined"
               size="medium"
-              name="email"
+              name="password"
               fullWidth
-              helperText={hasError('email') ? formState.errors.email[0] : null}
-              error={hasError('email')}
+              helperText={hasError('password') ? formState.errors.password[0] : null}
+              error={hasError('password')}
               onChange={handleChange}
-              type="email"
-              value={formState.values.email || ''}
+              type="password"
+              value={formState.values.password || ''}
             />
           </Grid>
           <Grid item xs={12}>
-            <i>
-              <Typography variant="subtitle2">
-                Fields that are marked with * sign are required.
-              </Typography>
-            </i>
+            <TextField
+              placeholder="newPassword"
+              label="newPassword *"
+              variant="outlined"
+              size="medium"
+              name="newPassword"
+              fullWidth
+              helperText={
+                hasError('password') ? formState.errors.newPassword[0] : null
+              }
+              error={hasError('password')}
+              onChange={handleChange}
+              type="password"
+              value={formState.values.newPassword || ''}
+            />
           </Grid>
+           
           <Grid item xs={12}>
             <Button
               size="large"
@@ -118,17 +172,20 @@ const Form = () => {
               color="primary"
               fullWidth
             >
-              Reset
+             Change
             </Button>
           </Grid>
           <Grid item xs={12}>
             <Typography
               variant="subtitle1"
               color="textSecondary"
-              align="center"
+              align="right"
             >
-              Remember your password?{' '}
-              <LearnMoreLink title="Change your Password" href="/PasswordChange" />
+             {' '}
+              <LearnMoreLink
+                title="sign in"
+                href="/signin"
+              />
             </Typography>
           </Grid>
         </Grid>
@@ -137,4 +194,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default ChangePassword;
