@@ -6,4 +6,5 @@ export { default as Billing } from './Billing';
 export { default as ListMembers } from './ListMembers';
 export { default as SearchFile } from './SearchFile';
 export { default as AddFiles} from './AddFiles';
+export { default as ChangePassword} from './ChangePassword';
 

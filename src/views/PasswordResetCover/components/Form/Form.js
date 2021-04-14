@@ -128,7 +128,7 @@ const Form = () => {
               align="center"
             >
               Remember your password?{' '}
-              <LearnMoreLink title="Sign in here" href="/signin-cover" />
+              <LearnMoreLink title="Change your Password" href="/PasswordChange" />
             </Typography>
           </Grid>
         </Grid>
