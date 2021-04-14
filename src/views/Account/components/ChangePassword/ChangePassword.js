@@ -38,9 +38,11 @@ const  ChangePassword = () => {
   
 
  const [putPassword, setPutPassword] = React.useState({
+  
    password: '',
    newPassword: ''
  })
+
   
   const [formState, setFormState] = React.useState({
     isValid: false,
@@ -55,8 +57,8 @@ const  ChangePassword = () => {
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
     
-       
     
+       
     setFormState(formState => ({
       ...formState,
       isValid: errors ? false : true,
@@ -66,11 +68,11 @@ const  ChangePassword = () => {
 
   const handleChange = event => {
     event.persist();
-
-     setPutPassword(putPassword =>({
-     ...putPassword,
     
-   }))
+     putPassword[event.target.name] = event.target.value;
+      setPutPassword({...putPassword});
+    
+       
     setFormState(formState => ({
       ...formState,
       values: {
@@ -92,22 +94,26 @@ const  ChangePassword = () => {
 
     const headers = {
                  'Content-Type': 'application/json',
-                 'Authentication': 'JWT fefege...'
+                 Authentication: StorageService.get('token')
                }
 
     const data = {
-        password: formState.values.password,
-        newPassword: formState.values.newPassword
+       
+        current: formState.values.password,
+         new: formState.values.newPassword
     }
+    
 
     if (formState.isValid) {
-      axios.post(`${process.env.REACT_APP_CHANGE_PASSWORD}`, {
-            headers: headers,
-            data: data
+      axios.post(`${process.env.REACT_APP_BACKEND_SERVER}${process.env.REACT_APP_CHANGE_PASSWORD}`,data,{
+          headers: headers,
+         
       })
-      .then( response => {
-        if (response && response.data && response.data.success) {
+      .then( (response) => {
         
+         setPutPassword({current: response.data.password, new: response.data.newPassword});{
+         
+         
          history.push("/account/?pid=general");
         } 
       }, error => {

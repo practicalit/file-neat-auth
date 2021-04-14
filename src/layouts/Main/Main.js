@@ -112,7 +112,7 @@ const Main = props => {
             },
              {
               title: 'Change your Password',
-              href: '/account/?pid=ChangePassword',
+              href: '/account/?pid=change-password',
             },
             {
               title: 'Notifications',

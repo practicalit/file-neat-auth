@@ -105,7 +105,7 @@ const subPages = [
   },
   {
     id: 'ChangePassword',
-    href: '/account/?pid=ChangePassword',
+    href: '/account/?pid=change-password',
     title: 'Change Password',
   },
   
@@ -186,7 +186,7 @@ const Account = (props = {}) => {
               <TabPanel value={pageId} index={'AddFiles'}>
                 <AddFiles/>
               </TabPanel>
-               <TabPanel value={pageId} index={'ChangePassword'}>
+               <TabPanel value={pageId} index={'change-password'}>
                 <ChangePassword/>
               </TabPanel>
     
